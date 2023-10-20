@@ -18,7 +18,7 @@
          </head>";
 
    echo "<body>";
-
+    //echo session_id();
    include ('cabecalho.php');
 
    // faz conexao 

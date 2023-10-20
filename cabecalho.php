@@ -22,7 +22,7 @@
       aqui vc coloca opcoes de 
       - fechar o carrinho e pagar
       - opcoes de perfil do usuario
-        1. forma de pagamentos padr�o por exemplo ...
+        1. forma de pagamentos padrï¿½o por exemplo ...
         2. compras anteriores, etc
       */
       echo "<p align='right'><a href='logout.php'>Sair</a></p>";
@@ -48,7 +48,7 @@
        - ver o carrinho
        - procurar produtos
       */
-      echo "<p align='right'><a href='frmUsuario.php'>Login</a></p>";
+      echo "<p align='right'><a href='frmLoginUsuario.php'>Login</a></p>";
   }
 
   echo "<hr>";
