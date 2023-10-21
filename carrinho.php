@@ -85,9 +85,8 @@
                                                 fk_produto = $codigoProduto and 
                                                 fk_compra = $codigoCompra ") );  
         if ($operacao == 'incluir') {
-            echo "<br> >> Vamor incluir...<br>";
+            //echo "<br> >> Vamor incluir...<br>";
             if ($quantidade == 0) {
-                echo $codigoCompra;
                 ExecutaSQL($conn,
                         " insert into tbl_compra_produto 
                             (quantidade,fk_produto,fk_compra) 
@@ -129,19 +128,52 @@
         }
     } 
     
-    echo "<br><strong>Compras ateh o momento...</strong><br>
-    
-        <table border='1'>
-            <tr>
-            <td>Produto</td>
-            <td>Qtd</td>
-            <td>$ unit</td>
-            <td>$ sub</td>
-            <td></td>
-            </tr>";
+    $stringCarrinhoEstrutura = "
+    <!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='UTF-8'>
+    <title>HomePage</title>
+    <link rel='stylesheet' type='text/css' href='carrinho.css'>
+</head>
+<body>
+
+    <div class='container'> 
+
+
+        <div class = 'containerCabecalho'>
+
+            <div class='cabecalhoPesquisa'>
+
+                <a class='logoCabecalho' href='testeHomePage.html'> <img width='200' src='E-commerce/logo4.svg'></a>&nbsp;
+
+                <form action='' class='formCabecalho'> 
+
+                    <input type='text' name='pesquisa' id='pesquisa' class='imagensCabecalho'
+                       size='40' maxlength='30' autofocus placeholder='Buscar' src='imagens/lupa.png' autocomplete='off'>&nbsp;
+
+                </form>
+
+                <a class='imagensCabecalho' href='testeCarrinho.html'><img width='30' src='imagens/carrinho.png'></a>&nbsp;
+
+                <a class='imagensCabecalho' href=''><img width='35' src='imagens/user.png'></a>         
+            </div>
+
+            <div class='cabecalho'>
+                <a class='linksCabecalho' href='testeSobre.html'><span class='animacaoHover'>&nbsp;Sobre</span></a>&nbsp;
+                <a class='linksCabecalho' href='testeHomePage.html'><span class='animacaoHover'>&nbsp;Produtos</span></a>&nbsp;
+                <a class='linksCabecalho' href='testeDesenvolvedores.html'><span class='animacaoHover'>&nbsp;Desenvolvedores</span></a>&nbsp;
+            </div>
+
+        </div>
+
+
+        <div class = 'corpo'>
+ ";
     
     // faz a selecao pra montar a tabela
-    $sql = " select tbl_produto.id_produto, 
+    $sql = " select tbl_produto.id_produto,
+                    tbl_produto.nome_produto,
                     tbl_produto.descricao_produto as descprod, 
                     tbl_compra_produto.quantidade, 
                     tbl_produto.preco_produto, 
@@ -155,8 +187,8 @@
     
     // cria table com itens no carrinho e seus subtotais
     while ( $linha = $select->fetch() ) {
-        
         $codigoProduto = $linha['id_produto']; 
+        $nomeProduto   = $linha['nome_produto'];
         $descProd      = $linha['descprod'];
         $quant         = $linha['quantidade'];
         $vunit         = $linha['preco_produto'];
@@ -166,16 +198,34 @@
         // com isso, o usuario nao precisaria voltar na home pra incrementar 
         // a quantidade do mesmo produto
         
-        echo "<tr>
-                <td>$descProd</td>
-                <td>$quant</td>
-                <td>$vunit</td>
-                <td>$sub</td>
-                <td><a href='carrinho.php?operacao=excluir&idProduto=$codigoProduto'>Excluir</a></td>
-                </tr>";    
-    }
-    
-    echo "</table>";
+        $stringCarrinhoEstrutura .= "
+        
+        <div class = 'produto'>
+        <img class = 'imagemProduto' src='testebanner1.jpg'>
+
+        <div class = 'infoProduto'>
+
+            <div class = 'nomeProduto'>$nomeProduto</div>
+
+            <div class = 'selecionarQuantidade'>
+
+                <div>Quantidade: $quant</div>
+
+            </div>
+
+            <div class = 'precoUnitario'>Preço Unitário: R$ $vunit</div>
+            <div class = 'precoTodosItens'>Subtotal: R$ $sub</div>
+            <button class = 'btnExcluir'><a href='carrinho.php?operacao=excluir&idProduto=$codigoProduto'>Excluir</a></button>
+
+        </div>
+    </div>
+      
+      <!-- Fim corpo -->
+      
+      ";    
+ }
+ 
+ 
     
     // calcula o total e mostra junto com o status da compra     
     $total = ValorSQL($conn," select sum (tbl_produto.preco_produto * tbl_compra_produto.quantidade)  
@@ -184,9 +234,37 @@
                                     tbl_produto.id_produto = tbl_compra_produto.fk_produto                           
                             where tbl_compra_produto.fk_compra = $codigoCompra "); 
 
-    echo "Status da compra: $statusCompra<br>";
-    echo "Total: $total <br><br>";
+    //echo "Status da compra: $statusCompra<br>";
+    //echo "Total: $total <br><br>";
+    $stringCarrinhoEstrutura .= "
+    <div class = 'total'>TOTAL: R$ $total</div>
+    <button class = 'btnCompar'>Comprar</button>
+    </div>
+
+    <div class = 'containerRodape'>
+        <div class='rodape'>
+            <a class='linksRodape' href='testeHomePage.html'>&nbsp;Home</a>
+            <a class='linksRodape' href='testeSobre.html'>&nbsp;Sobre</a> &nbsp;
+            <a class='linksRodape' href='#'>&nbsp;Produtos</a> &nbsp;
+            <a class='linksRodape' href='#'>&nbsp;Perfil</a> &nbsp;
+        </div> 
+
+
+        <div class='rodapeDevs'>
+            <center>
+                <p>Desenvolvedores
+                    <br><br>
+                    Jenyffer Butzke nº 16 - João Victor Bosi nº 17 - João Vitor Jacob nº 18 - João Vitor Lucio nº 19 - Laís Quintão nº 20
+                </p>
+            </center>
+        </div>
+    </div>
     
+</div>
+</body>
+</html>";
+ 
+echo $stringCarrinhoEstrutura;
     // se o login foi obtido (se esta logado), mostra link 'fechar carrinho' 
     if ( isset($login) ) 
     {

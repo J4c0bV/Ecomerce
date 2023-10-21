@@ -47,8 +47,6 @@
     // eh um metodo da conexao
     // retorna o nro de linhas afetadas
     $linhas = $paramConn->exec($paramSQL);
-    var_dump($paramSQL);
-    echo "<br>";
     if ($linhas > 0) { 
         return TRUE; 
     } else { 
@@ -66,8 +64,6 @@
   // Set 2023 - Marcelo C Peres 
   function ValorSQL( $pConn, $pSQL ) 
   {
-    var_dump($pSQL);
-    echo "<br>";
    $linhas = $pConn->query($pSQL)->fetch();  
    if ($linhas > 0) { 
        return $linhas[0]; 
