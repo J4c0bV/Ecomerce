@@ -44,6 +44,7 @@
       $idProduto        = $linha['id_produto'];
       $descricaoProduto = $linha['descricao_produto'];
       $precoProduto     = $linha['preco_produto'];
+      $imagemProduto    = $linha['codigovisual_produto'];
   
       if ($card == 0) { // nova linha !!
           echo "<tr>";      
@@ -52,7 +53,7 @@
       $card++;
       echo "<td>
              <center> 
-              <img src='imagens/$idProduto.jpg' width=50><br>
+              <img src='$imagemProduto' width=50><br>
               <strong>$descricaoProduto</strong><br>
               <i>$precoProduto</i><br>
               <a href='carrinho.php?operacao=incluir&idProduto=$idProduto'>Comprar</a>

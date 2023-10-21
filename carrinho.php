@@ -125,7 +125,23 @@
         // conforme orientacao da professora jovita, 
         // exclua fisicamente o tmpcompra referente a essa compra
         // ...   
+        $qntdRetirada = $_GET['quantidadeRetirada'];
+        
+        ExecutaSQL($conn, "update tbl_produto set quantidade_disponivel = quantidade_disponivel - $qntdRetirada 
+                        where id_produto = $codigoProduto");  
+
+        $statusCompra = 'Concluida';
+       ExecutaSQL($conn," update tbl_compra 
+                            set status_pedido = '$statusCompra'
+                          where
+                            id_compra = $codigoCompra");
+
+       ExecutaSQL($conn," delete from 
+                                  tbl_compra_temporaria
+                               where 
+                                  fk_compra = $codigoCompra");
         }
+
     } 
     
     $stringCarrinhoEstrutura = "
@@ -145,7 +161,7 @@
 
             <div class='cabecalhoPesquisa'>
 
-                <a class='logoCabecalho' href='testeHomePage.html'> <img width='200' src='E-commerce/logo4.svg'></a>&nbsp;
+                <a class='logoCabecalho' href='index.php'> <img width='200' src='imagens/logo4.svg'></a>&nbsp;
 
                 <form action='' class='formCabecalho'> 
 
@@ -154,7 +170,7 @@
 
                 </form>
 
-                <a class='imagensCabecalho' href='testeCarrinho.html'><img width='30' src='imagens/carrinho.png'></a>&nbsp;
+                <a class='imagensCabecalho' href='carrinho.php'><img width='30' src='imagens/carrinho.png'></a>&nbsp;
 
                 <a class='imagensCabecalho' href=''><img width='35' src='imagens/user.png'></a>         
             </div>
@@ -173,6 +189,7 @@
     
     // faz a selecao pra montar a tabela
     $sql = " select tbl_produto.id_produto,
+                    tbl_produto.codigovisual_produto,
                     tbl_produto.nome_produto,
                     tbl_produto.descricao_produto as descprod, 
                     tbl_compra_produto.quantidade, 
@@ -189,6 +206,7 @@
     while ( $linha = $select->fetch() ) {
         $codigoProduto = $linha['id_produto']; 
         $nomeProduto   = $linha['nome_produto'];
+        $imagem        = $linha['codigovisual_produto'];
         $descProd      = $linha['descprod'];
         $quant         = $linha['quantidade'];
         $vunit         = $linha['preco_produto'];
@@ -201,7 +219,7 @@
         $stringCarrinhoEstrutura .= "
         
         <div class = 'produto'>
-        <img class = 'imagemProduto' src='testebanner1.jpg'>
+        <img class = 'imagemProduto' src='$imagem'>
 
         <div class = 'infoProduto'>
 
@@ -238,7 +256,7 @@
     //echo "Total: $total <br><br>";
     $stringCarrinhoEstrutura .= "
     <div class = 'total'>TOTAL: R$ $total</div>
-    <button class = 'btnCompar'>Comprar</button>
+    <button class = 'btnCompar'><a href='carrinho.php?operacao=fechar&idProduto=$codigoProduto&quantidadeRetirada=$quant'>Comprar</a></button>
     </div>
 
     <div class = 'containerRodape'>
