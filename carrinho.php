@@ -12,13 +12,15 @@
 
     // captura session_id (garante o acesso concorrente)
     $session_id = session_id();  
+    $produtos = array();
 
     // chama conecta() e guarda a conexao default em $conn
     $conn = conecta();   // conecta com o banco e obtem a var de controle $conecta
 
     // se estiver logado pega o codigo do usuario atraves do $login 
-    if ( isset($_SESSION['sessaoLogin']) ) {
-        $login = $_SESSION['sessaoLogin'];
+    if ( isset($_COOKIE['loginCookie']) ) {
+        $login = $_COOKIE['loginCookie'];
+        var_dump($login);
         $codigoUsuario = ValorSQL($conn, " select id_usuario from tbl_usuario 
                                         where email_usuario = '$login'");
     }
@@ -29,7 +31,7 @@
                                         where tbl_compra_temporaria.id_sessao = '$session_id' ") ) == 1;
     // se nao existe
     if (!$existe) {   
-
+        
         $dataHoje = date('Y/m/d');
     
         $statusCompra = 'Pendente';
@@ -65,9 +67,9 @@
 
     if (isset($codigoUsuario)) {
         ExecutaSQL($conn,"update tbl_compra 
-                            set fk_id_usuario = $codigoUsuario 
+                            set fk_usuario = $codigoUsuario 
                         where 
-                            fk_id_usuario is null and 
+                            fk_usuario is null and 
                             id_compra = $codigoCompra"); 
     }
 
@@ -98,6 +100,7 @@
                             where 
                             fk_produto = $codigoProduto and 
                             fk_compra = $codigoCompra "); 
+                
                         
             }
         } else 
@@ -125,10 +128,15 @@
         // conforme orientacao da professora jovita, 
         // exclua fisicamente o tmpcompra referente a essa compra
         // ...   
-        $qntdRetirada = $_GET['quantidadeRetirada'];
-        
-        ExecutaSQL($conn, "update tbl_produto set quantidade_disponivel = quantidade_disponivel - $qntdRetirada 
-                        where id_produto = $codigoProduto");  
+
+        $produtoFechado = $_GET['produtoFechado'];
+        $produtos = json_decode(urldecode($produtoFechado), true);
+        foreach($produtos as $produto_id => $quantidade){
+            $qntdRetirada = $produtos[$produto_id];
+            ExecutaSQL($conn, "update tbl_produto set quantidade_disponivel = quantidade_disponivel - $qntdRetirada 
+                       where id_produto = $produto_id"); 
+        }
+         
 
         $statusCompra = 'Concluida';
        ExecutaSQL($conn," update tbl_compra 
@@ -198,7 +206,7 @@
             from tbl_produto
                 inner join tbl_compra_produto on 
                     tbl_produto.id_produto = tbl_compra_produto.fk_produto 
-            where tbl_compra_produto.fk_compra = $codigoCompra  
+            where tbl_compra_produto.fk_compra = $codigoCompra 
             order by tbl_produto.descricao_produto ";
     $select = $conn->query($sql);
     
@@ -215,7 +223,12 @@
         // vc poderia incluir links para 'incluir' alem dos 'excluir'
         // com isso, o usuario nao precisaria voltar na home pra incrementar 
         // a quantidade do mesmo produto
-        
+
+        if (array_key_exists($produto_id, $produtos)) {
+            $produtos[$codigoProduto] += $quant;
+        } else {
+            $produtos[$codigoProduto] = $quant;
+        }
         $stringCarrinhoEstrutura .= "
         
         <div class = 'produto'>
@@ -254,9 +267,10 @@
 
     //echo "Status da compra: $statusCompra<br>";
     //echo "Total: $total <br><br>";
+    $produtos_serializados = json_encode($produtos);
     $stringCarrinhoEstrutura .= "
     <div class = 'total'>TOTAL: R$ $total</div>
-    <button class = 'btnCompar'><a href='carrinho.php?operacao=fechar&idProduto=$codigoProduto&quantidadeRetirada=$quant'>Comprar</a></button>
+    <button class = 'btnCompar'><a href='carrinho.php?operacao=fechar&produtoFechado=$produtos_serializados&idProduto=$codigoProduto'>Comprar</a></button>
     </div>
 
     <div class = 'containerRodape'>
@@ -272,7 +286,8 @@
             <center>
                 <p>Desenvolvedores
                     <br><br>
-                    Jenyffer Butzke nº 16 - João Victor Bosi nº 17 - João Vitor Jacob nº 18 - João Vitor Lucio nº 19 - Laís Quintão nº 20
+                    ";
+                    $stringCarrinhoEstrutura.="Jenyffer Butzke nº 16 - João Victor Bosi nº 17 - João Vitor Jacob nº 18 - João Vitor Lucio nº 19 - Laís Quintão nº 20
                 </p>
             </center>
         </div>
@@ -283,6 +298,7 @@
 </html>";
  
 echo $stringCarrinhoEstrutura;
+
     // se o login foi obtido (se esta logado), mostra link 'fechar carrinho' 
     if ( isset($login) ) 
     {
@@ -290,10 +306,6 @@ echo $stringCarrinhoEstrutura;
         echo "<a href='carrinho.php?operacao=fechar&idProduto=0'>Fechar o carrinho</a>";         
     }
     }
+     
 
-    // link pra voltar pra home
-    echo "<br>
-        <a href='index.php'>Home</a>";   
-    
- 
 ?>

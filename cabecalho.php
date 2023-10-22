@@ -36,6 +36,7 @@
           - cadastro de usuarios 
           ...
          */   
+        echo "<p align='right'><a href='carrinho.php'>Carrinho</a></p>"; 
       // caso seja um usuario comum
       } else {   
         echo "<p align='right'>Bom dia, Fulano<br></p>";

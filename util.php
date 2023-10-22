@@ -24,8 +24,6 @@
    $conn = conecta();  
    $varSQL = " select senha_usuario,admin_usuario from tbl_usuario
                where email_usuario = '$paramLogin' "; 
-
-   echo $varSQL;
    
    $linha =  $conn->query($varSQL)->fetch();
    var_dump($linha);
