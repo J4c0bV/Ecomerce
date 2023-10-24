@@ -1,0 +1,110 @@
+.devJenyfferFoto
+{
+    grid-area: devJenyfferFoto;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.devJenyffer
+{
+    grid-area: devJenyffer;
+
+    align-items: center;
+}
+
+.devBosiFoto
+{
+    grid-area: devBosiFoto;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.devBosi
+{
+    grid-area: devBosi;
+
+    align-items: center;
+}
+
+.devJacobFoto
+{
+    grid-area: devJacobFoto;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.devJacob
+{
+    grid-area: devJacob;
+
+    align-items: center;
+}
+
+.devLucioFoto
+{
+    grid-area: devLucioFoto;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.devLucio
+{
+    grid-area: devLucio;
+
+    align-items: center;
+}
+
+.devLaisFoto
+{
+    grid-area: devLaisFoto;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.devLais
+{
+    grid-area: devLais;
+
+    align-items: center;
+}
+
+.email
+{
+    color: #368020;
+    text-decoration: none;
+}
+
+.rodapeDevs
+{
+    grid-area: rodapeDevs;
+    background-color: #368020;
+    color:#f0f7da;
+}
+
+.container
+{
+    background-color: #f0f7da;
+    display: grid;    
+    grid-template-columns: 33% 67%;
+    grid-template-rows: 14vh 6vh 30vh 30vh 30vh 30vh 30vh 10vh 15vh;
+    grid-template-areas:"cabecalhoPesquisa cabecalhoPesquisa "
+                        "cabecalho cabecalho" 
+                        "devJenyfferFoto devJenyffer"
+                        "devBosiFoto devBosi"
+                        "devJacobFoto devJacob"
+                        "devLucioFoto devLucio"
+                        "devLaisFoto devLais"
+                        "rodape rodape"
+                        "rodapeDevs rodapeDevs";
+}
+
+.container div
+{
+    font-family:Arial, Helvetica, sans-serif;
+    display: flex;
+}

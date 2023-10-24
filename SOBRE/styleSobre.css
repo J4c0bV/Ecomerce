@@ -1,0 +1,43 @@
+.tituloSobre
+{
+    grid-area: tituloSobre;
+    color:#368020;
+    font-size: 40px;
+    margin-top: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobreEmpresa
+{
+    grid-area: sobreEmpresa;
+    color: #234d20;    
+    margin: 50px;
+    text-align: justify;
+}
+
+.sobreEmpresa img{
+    width: 75%;
+}
+
+.container
+{
+    background-color: #f0f7da;
+    display: grid;    
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 14vh 6vh 15vh 100fr 10vh 15vh;
+    grid-template-areas:"cabecalhoPesquisa cabecalhoPesquisa cabecalhoPesquisa"
+                        "cabecalho cabecalho cabecalho" 
+                        "tituloSobre tituloSobre tituloSobre"
+                        "sobreEmpresa sobreEmpresa sobreEmpresa"
+                        "rodape rodape rodape"
+                        "rodapeDevs rodapeDevs rodapeDevs";
+}
+
+.container div
+{
+    font-family:Arial, Helvetica, sans-serif;
+    display: flex;
+    /*align-items: center;
+    justify-content: center;*/
+}

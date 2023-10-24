@@ -1,0 +1,400 @@
+/*Inicio corpo -----------------------------------------------------------------------*/
+
+#arrow-btn
+{
+    margin-left: 5%;
+    margin-top: 155px;
+}
+
+.geral
+{
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    grid-area: corpo;
+
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 5%;
+
+    border-radius: 15px;
+    width: 95%;
+    height: 750px; 
+}
+
+/* Parte Superior ---------- */
+
+.parteBranca
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.superior
+{
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 2%;
+}
+
+.esquerda
+{
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 2.5%;
+    margin-left: 2.5%;
+}
+
+
+.imgPrincipal img
+{
+    width: 400px;
+    height: 450px;
+
+    margin-left: 2%;
+
+    border-radius: 4px;
+
+    object-fit: cover;
+}
+
+.colunaPreview
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.imgPreview
+{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    opacity: 1;
+    transition: 0.3s;
+
+    cursor: pointer;
+
+    width: 110px;
+    height: 110px;
+
+    object-fit: cover;
+
+    margin-bottom: 2px;
+}
+
+.imgPreview:hover
+{
+    opacity: 0.7;
+    box-shadow: 0 0 2px 1px rgba(1, 255, 65, 0.5);
+}
+
+.direita
+{
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 2.5%;
+    margin-left: 5%;
+
+    gap: 1%;
+}
+
+.nomeProduto
+{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.estrelas 
+{
+    display: flex;
+
+    margin-bottom: 12%;
+    width: 75%;
+    gap: 5px;
+}
+
+.estrelas img
+{
+    width: 20px;
+}
+
+.precoDesconto
+{
+    text-decoration: line-through;
+    font-size: 20px;
+    text-decoration-color: #fef445;
+}
+
+.precoProduto
+{
+    font-size: 35px;
+    font-weight: bold;
+
+    margin-bottom: 3.5%;
+}
+
+.selecionarQuantidade
+{
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 5%;
+}
+
+.selecionarQunatidadeTxt1
+{
+    font-size: 15px;
+}
+
+.selecionarQunatidadeTxt2
+{
+    font-size: 13px;
+}
+
+#quantidade
+{
+    border: none;
+    width: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    font-size: 13px;
+}
+
+.formQuantidade
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.btnComprar
+{
+    width: 100%;
+    height: 50px;
+
+    border-radius: 10px;
+    border: none;
+
+    background-color:  #fff200;
+
+    color: black;
+    font-weight: bold;  
+    
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.botoes
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btnCarrinho
+{
+    width: 100%;
+    height: 50px;
+
+    border-radius: 10px;
+    border: none;
+
+    background-color:  #f7f06b;
+
+    color: black;
+    font-weight: bold; 
+
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.btnComprar:hover
+{
+    background-color:  #d3ca0f;
+}
+
+.btnCarrinho:hover
+{
+    background-color: #fff758;
+}
+
+hr
+{
+    width: 95%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 1px solid black;
+
+    margin-bottom: 1%;
+}
+
+/* Parte do Meio ---------- */
+
+.meio
+{
+    width: 90%;
+
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 2%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo
+{
+    font-size: 25px;
+    font-weight: bold;
+
+    margin-bottom: 1%;
+}
+
+.descricao
+{
+    width: 105.75%;
+    height: 150px;
+
+    overflow-y: scroll;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Parte Inferior ---------- */
+
+.inferior
+{
+    width: 100%;
+
+    margin-top: 2%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.inferior > .titulo
+{
+    margin-left: 2.5%;
+}
+
+.linhaProdutos
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5%;
+    margin: 2.5%;
+}
+
+.quadradoProduto
+{
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 30%;
+    height: 90%; 
+
+    border-radius: 15px;
+
+    transition: box-shadow 0.4s;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2)
+}
+
+.quadradoProduto:hover
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.quadradoProduto img
+{
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+}
+
+.quadradoProduto hr
+{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.infoQuadradoProduto
+{
+    margin-left: 5%;
+    margin-right: 5%;
+
+    margin-bottom: 30%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.infoOutroProduto
+{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.tituloOutroProduto
+{
+    width: 100%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 25px;
+
+    margin-bottom: 5%;
+}
+
+.precoOutroDesconto
+{
+    text-decoration: line-through;
+    font-size: 20px;
+
+    margin-bottom: 2.5%;
+}
+
+
+.precoOutroProduto
+{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/*Fim corpo -----------------------------------------------------------------------*/
+
+
+/*Container -----------------------------------------------------------------------*/
+.container
+{
+    background-color: #f0f7da ;
+    display: grid;    
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 14vh 6vh 225vh 10vh 18vh;
+    grid-template-areas:"cabecalhoPesquisa cabecalhoPesquisa"
+                        "cabecalho cabecalho" 
+                        "corpo corpo"
+                        "rodape rodape"
+                        "rodapeDevs rodapeDevs";
+}
+
+.container div
+{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}

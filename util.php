@@ -1,21 +1,19 @@
 <?php 
- 
   //////  funcao de conexao
   //////  14-8-2023
-  function conecta ($params = "")  // igual a nada pra indicar q aceita vazio !! 
+  function conecta ($params="") 
   {
+    
     if ($params == "") {
-        $params="pgsql:host=pgsql.projetoscti.com.br; dbname=projetoscti18; user=projetoscti18; password=720421";
-    }
-
+      $params="pgsql:host=pgsql.projetoscti.com.br; dbname=projetoscti18; user=projetoscti18; password=720421";
+  }
+    
     $varConn = new PDO($params);
 
     if (!$varConn) {
         echo "Nao foi possivel conectar";
-        exit();
     } else { return $varConn; }
   }
-  /////////////////////////
 
   //////  funcao de login
   //////  11-9-2023
@@ -53,7 +51,7 @@
   }
 
   /*
-  * Fun��o para executasql frases sql
+  * Fun  o para executasql frases sql
   * marcelo c peres - 2023
   */
 

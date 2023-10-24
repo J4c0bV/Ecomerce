@@ -1,0 +1,306 @@
+.banner
+{
+    
+    background-color: #368020;
+    color:white;
+}
+
+/*slides*/
+.slideshow-container 
+{
+    max-width: 450px;
+    display: flex;
+}
+
+.banner
+{
+    grid-area: banner;
+    background-color: #368020;
+}
+
+.mySlides 
+
+{
+    display: none;
+}
+
+.prev, .next 
+{
+    cursor: pointer;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.2s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next 
+{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover 
+{
+    background-color: rgba(0,0,0,0.8);
+}
+
+.active, .dot:hover 
+{
+    background-color: #717171;
+}
+
+.fade 
+{
+    animation-name: fade;
+    animation-duration: 1.0s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+/**/
+
+/*texto banner --------------------------------------*/
+.imgBanner 
+{
+    width: 1000px; 
+    height: 350px;
+}
+  
+.hoverTexto 
+{
+    opacity: 0;
+    transition: .5s ease;
+}
+  
+.slideshow-container:hover .hoverTexto 
+{
+    opacity: 0.9;
+}
+  
+.text 
+{
+    color: #234d20;
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+    padding-left: 30px;
+    padding-right: 30px;
+
+    text-align: justify;
+
+    width: 940px;
+    height: 350px;
+    transition: .5s ease;
+    background-color: #e0f3a9;
+
+    border-left: 20px;
+    border-right: 20px;
+
+    margin-bottom: 7px;
+}
+/*fim texto banner*/
+
+.main
+{
+    grid-area: main;
+}
+
+/*produto 1 ------------------------------------------------------------------*/
+.produto1
+{
+    grid-area: produto1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.produto1 fieldset
+{
+    height: 80%;
+    width: 90%;
+    background-color: #b7cc7a;
+    border: none;
+    border-radius: 10px;
+}
+
+.produto1 img
+{
+    height: 300px;
+    width: 300px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+.produto1 img:hover
+{
+    transform: scale(1.1);
+    background-position: -60px;
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.16), 0 3p rgba(255, 255, 255, 0.23) 0.23;
+}
+
+.produto1 img:active
+{
+    transform: scale(1);
+    background-position: 500px;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
+}
+
+/*produto 2 ------------------------------------------------------------------*/
+.produto2
+{
+    grid-area: produto2;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.produto2 fieldset
+{
+    height: 80%;
+    width: 90%;
+    background-color: #b7cc7a;
+    border: none;
+    border-radius: 10px;
+    text-align: justify;
+}
+
+.produto2 img
+{
+    height: 300px;
+    width: 300px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+.produto2 img:hover
+{
+    transform: scale(1.1);
+    background-position: -60px;
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.16), 0 3p rgba(255, 255, 255, 0.23) 0.23;
+}
+
+.produto2 img:active
+{
+    transform: scale(1);
+    background-position: 500px;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
+}
+
+/*produto 3 ------------------------------------------------------------------*/
+.produto3
+{
+    grid-area: produto3;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: justify;
+}
+
+.produto3 fieldset
+{
+    height: 80%;
+    width: 90%;
+    background-color: #b7cc7a;
+    border: none;
+    border-radius: 10px;
+}
+
+.produto3 img
+{
+    height: 300px;
+    width: 300px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+.produto3 img:hover
+{
+    transform: scale(1.1);
+    background-position: -60px;
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.16), 0 3p rgba(255, 255, 255, 0.23) 0.23;
+}
+
+.produto3 img:active
+{
+    transform: scale(1);
+    background-position: 500px;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
+}
+
+/*video -----------------------------------------------------------------------------*/
+.linkVideo
+{
+    grid-area: linkVideo;
+    margin: 30px;
+}
+
+.legendaVideo
+{
+    grid-area: legendaVideo;
+    margin: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.legendaVideo fieldset
+{
+    background-color: #e0f3a9;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: justify;
+}
+
+/*Container --------------------------------------------------------------------------*/
+.container
+{
+    background-color: #f0f7da ;
+    display: grid;    
+    padding: 0px;
+    grid-template-columns: 16% 17% 17% 17% 17% 16%;
+    grid-template-rows: 14vh 6vh 65vh 80vh 45fr 10vh 18vh;
+    grid-template-areas:"cabecalhoPesquisa cabecalhoPesquisa cabecalhoPesquisa cabecalhoPesquisa cabecalhoPesquisa cabecalhoPesquisa"
+                        "cabecalho cabecalho cabecalho cabecalho cabecalho cabecalho" 
+                        "banner banner banner banner banner banner" 
+                        "produto1 produto1 produto2 produto2 produto3 produto3" 
+                        "legendaVideo legendaVideo legendaVideo linkVideo linkVideo linkVideo"
+                        "rodape rodape rodape rodape rodape rodape"
+                        "rodapeDevs rodapeDevs rodapeDevs rodapeDevs rodapeDevs rodapeDevs";
+}
+
+.container div
+{
+    font-family:Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

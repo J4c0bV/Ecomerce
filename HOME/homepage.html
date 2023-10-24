@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="styleHomepage.css">
+    <link rel="stylesheet" type="text/css" href="styleCabecalhoRodape.css">
+    <script src="jsHomePage.js" defer></script>
+</head>
+<body>
+
+    <!-- div geral -->
+    <div class="container"> 
+
+        <!-- Início cabeçalho -->
+
+        <!--cabeçalho logo, pesquisa, carrinho e login-->
+        <div class="cabecalhoPesquisa">
+
+            <a class="logoCabecalho" href="homepage.html"><img width="200" src="../imagens/logo4.svg"></a>&nbsp;
+
+            <form action='../PRODUTOS/produto_mostra.php' class='formCabecalho'method='POST'>
+                <input type='text' name='nome' id='pesquisa' class='imagensCabecalho'
+                size='40' maxlength='30' autofocus placeholder='Buscar' src='../imagens/lupa.png' autocomplete='off'>&nbsp;
+            </form>
+
+
+            <a class="imagensCabecalho" href="../CARRINHO/carrinho.php"><img width="30" src="../imagens/carrinho.png"></a>&nbsp;
+
+            <a class="imagensCabecalho" href="../LOGIN/frmLoginUsuario.php"><img width="35" src="../imagens/user.png"></a>         
+        </div>
+        
+        <!--cabeçalho sobre, produtos, devs-->
+        <div class="cabecalho">
+            <a class="linksCabecalho" href="../SOBRE/sobre.html"><span class="animacaoHover">&nbsp;Sobre</span></a>&nbsp;
+            <a class="linksCabecalho" href="../PRODUTOS/produto_mostra.php"><span class="animacaoHover">&nbsp;Produtos</span></a>&nbsp;
+            <a class="linksCabecalho" href="../DEVS/paginaDesenvolvedores.html"><span class="animacaoHover">&nbsp;Desenvolvedores</span></a>&nbsp;
+        </div>
+
+        <!-- Fim cabeçalho -->
+
+        <!--banner foto profuto grande-->
+        <div class="banner">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img class="imgBanner" src="../imagens/banner1.png">
+                    <div class="hoverTexto">
+                        <div class="text"><p>&nbsp;&nbsp;&nbsp;A Bag&co é uma loja virtual especializada em ecobags, oferecendo uma variedade de opções ecológicas, 
+                            estampadas com o seu curso predileto, ou com todos os cursos juntos, como o modelo CTI. 
+                            Nosso compromisso com a sustentabilidade e design atraente a torna uma escolha ideal para quem 
+                            procura alternativas eco-friendly às sacolas plásticas descartáveis, promovendo práticas de consumo 
+                            mais responsáveis.</p></div>
+                    </div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <img class="imgBanner" src="../imagens/banner2.png">
+                    <div class="hoverTexto">
+                        <div class="text"><p>&nbsp;&nbsp;&nbsp;A Bag&co é uma loja virtual especializada em ecobags, oferecendo uma variedade de opções ecológicas, 
+                            estampadas com o seu curso predileto, ou com todos os cursos juntos, como o modelo CTI. 
+                            Nosso compromisso com a sustentabilidade e design atraente a torna uma escolha ideal para quem 
+                            procura alternativas eco-friendly às sacolas plásticas descartáveis, promovendo práticas de consumo 
+                            mais responsáveis.</p></div>
+                    </div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <img class="imgBanner" src="../imagens/banner3.png">
+                    <div class="hoverTexto">
+                        <div class="text"><p>&nbsp;&nbsp;&nbsp;A Bag&co é uma loja virtual especializada em ecobags, oferecendo uma variedade de opções ecológicas, 
+                            estampadas com o seu curso predileto, ou com todos os cursos juntos, como o modelo CTI. 
+                            Nosso compromisso com a sustentabilidade e design atraente a torna uma escolha ideal para quem 
+                            procura alternativas eco-friendly às sacolas plásticas descartáveis, promovendo práticas de consumo 
+                            mais responsáveis.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--fim banner-->
+
+        <!--fotos 3 produtos-->
+        <div class="produto1">
+            <fieldset>
+                <center>
+                    <a><img src="../imagens/eletronicaO.jpg"></a>
+                    <p>Nossas ecobags são mais do que apenas sacolas. Elas são uma declaração de amor ao planeta.</p>
+                </center>
+            </fieldset>
+        </div>
+
+        <div class="produto2">
+            <fieldset>
+                <center>
+                    <a><img src="../imagens/informaticaO.jpg"></a>
+                    <p>Desfrute de uma linda ecobag do seu curso favorito. Nossas ecobags são a escolha eco-friendly perfeita para um mundo melhor.</p>
+                </center>
+            </fieldset>
+        </div>
+
+        <div class="produto3">
+            <fieldset>
+                <center>
+                    <a><img src="../imagens/mecanicaO.png"></a>
+                    <p>Nossas ecobags são o acessório perfeito para um dia de compras conscientes. Carregue seus objetos preferidos em sua sacola favorita!</p>
+                </center>
+            </fieldset>
+        </div>
+        <!--fim fotos-->
+
+        <!--legenda vídeo-->
+        <div class="legendaVideo">
+            <fieldset>
+                &nbsp;&nbsp;&nbsp;Nossa missão é oferecer uma ampla variedade de ecobags que não apenas ajudam a reduzir o desperdício de plástico, mas também elevam o seu estilo de vida. 
+    Cada ecobag que você encontra aqui foi cuidadosamente selecionada por sua qualidade, durabilidade e design, garantindo que você possa carregar suas compras com elegância e responsabilidade ambiental. 
+    <br>&nbsp;&nbsp;&nbsp;Queremos que você se sinta bem ao escolher nossos produtos, sabendo que está contribuindo para um futuro mais limpo e verde. 
+    Além disso, acreditamos que a conscientização ambiental é essencial para criar mudanças positivas. Por isso, estamos empenhados em educar e inspirar nossos clientes a adotarem hábitos mais sustentáveis em suas vidas cotidianas.
+            </fieldset>            
+        </div>
+
+        <!--link video-->
+        <div class="linkVideo">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/841ORvFfkME?si=3O1VPT9JfNMxE2f-" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
+        </div>
+        
+        
+        <!--Início Rodapé-->
+        <!--rodapé-->
+        <div class="rodape">
+            <a class="linksRodape" href="../HOME/homepage.html">&nbsp;Home</a>
+            <a class="linksRodape" href="../SOBRE/sobre.html">&nbsp;Sobre</a> &nbsp;
+            <a class="linksRodape" href="../PRODUTOS/produto_mostra.php">&nbsp;Produtos</a> &nbsp;
+            <a class="linksRodape" href="../LOGIN/frmLoginUsuario.php">&nbsp;Perfil</a> &nbsp;
+        </div>
+
+        <!--rodapé devs-->
+        <div class="rodapeDevs">
+            <center>
+                <p>Desenvolvedores
+                    <br><br>
+                    Jenyffer Butzke nº 16 - João Victor Bosi nº 17 - João Vitor Jacob nº 18 - João Vitor Lucio nº 19 - Laís Quintão nº 20
+                    <br><br>
+                </p>
+                <a class="voltarTopo" href="#">↑ Voltar ao topo</a>
+            </center>
+        </div>
+        <!--FIm Rodapé-->   
+
+    </div>
+</body>
+</html>
