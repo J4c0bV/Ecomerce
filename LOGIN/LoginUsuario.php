@@ -24,5 +24,5 @@
   unset($insert);
   unset($conn);
   
-  header('Location: homepage.html');
+  header('Location: ../HOME/homepage.html');
 ?> 

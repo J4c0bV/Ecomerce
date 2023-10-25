@@ -36,6 +36,7 @@
          <meta name='viewport' content='width=device-width, initial-scale=1.0'>
          <title>Login</title>
          <link rel='stylesheet' type='text/css' href='login.css'>
+         <link rel='stylesheet' type='text/css' href='stylePaginaUsuario.css'>
      </head>
      <body>
          <div class='pagina'>
@@ -50,7 +51,7 @@
                  <label for='senha'>Senha</label>
                  <input type='password' name='senha' placeholder='Digite sua senha' required />
                  <button class='botao' type='submit'>Entrar</button>
-                 <a href='frmCadastroUsuario.php' class='botao'>Cadastre-se</a>
+                 <a href='../CADASTRO/frmCadastroUsuario.php' class='botao'>Cadastre-se</a>
                  <button class='botao' type='reset'>Apagar</button>
              </form>
          </div>
@@ -85,7 +86,7 @@
         <meta http-equiv='Expires' content='0' />
         <title>Página do usuário</title>
         <link rel='stylesheet' type='text/css' href='stylePaginaUsuario.css'>
-        <link rel='stylesheet' type='text/css' href='styleCabecalhoRodape.css'>
+        <link rel='stylesheet' type='text/css' href='../HOME/styleCabecalhoRodape.css'>
     </head>
     <body>
         <div class='container'>
@@ -96,16 +97,16 @@
 
             <div class='cabecalhoPesquisa'>
  
-             <a class='logoCabecalho' href='homepage.html'><img width='200' src='logo4.svg'></a>&nbsp;
+             <a class='logoCabecalho' href='../HOME/homepage.html'><img width='200' src='../imagens/logo4.svg'></a>&nbsp;
  
              <form action='' class='formCabecalho'>
                  <input type='text' name='pesquisa' id='pesquisa' class='imagensCabecalho'
                     size='40' maxlength='30' autofocus placeholder='Buscar' src='lupa.png' autocomplete='off'>&nbsp;
              </form>
  
-             <a class='imagensCabecalho' href='carrinho.php'><img width='30' src='carrinho.png'></a>&nbsp;
+             <a class='imagensCabecalho' href='../CARRINHO/carrinho.php'><img width='30' src='../imagens/carrinho.png'></a>&nbsp;
  
-             <a class='imagensCabecalho' href='frmLoginUsuario.php'><img width='35' src='user.png'></a>         
+             <a class='imagensCabecalho' href='frmLoginUsuario.php'><img width='35' src='../imagens/user.png'></a>         
          </div>
          
          <!--cabeçalho sobre, produtos, devs-->

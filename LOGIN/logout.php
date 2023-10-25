@@ -8,5 +8,5 @@
   $_SESSION['sessaoConectado']=false; 
   $_SESSION['sessaoAdmin']=false; 
 
-  header('Location: homepage.html');
+  header('Location: ../HOME/homepage.html');
 ?>

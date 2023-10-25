@@ -53,7 +53,6 @@ if (isset($_POST['valNome'])) {
     $valNome = "";
 }
 
-var_dump($valNome);
 $sql = " select * from tbl_produto 
          where (nome_produto like '%$valNome%')   
          order by nome_produto ";
