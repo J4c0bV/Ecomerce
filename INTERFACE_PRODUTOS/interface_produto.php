@@ -23,7 +23,7 @@ echo"<html lang='pt-br'>
             <a class='logoCabecalho' href='../HOME/homepage.html'><img width='200' src='../imagens/logo4.svg'></a>&nbsp;
 
             <form action='../PRODUTOS/produto_mostra.php' class='formCabecalho'method='POST'>
-                    <input type='text' name='nome' id='pesquisa' class='imagensCabecalho'
+                    <input type='text' name='valNome' id='pesquisa' class='imagensCabecalho'
                     size='40' maxlength='30' autofocus placeholder='Buscar' src='../imagens/lupa.png' autocomplete='off'>&nbsp;
             </form>
 

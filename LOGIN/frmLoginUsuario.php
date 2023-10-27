@@ -99,8 +99,8 @@
  
              <a class='logoCabecalho' href='../HOME/homepage.html'><img width='200' src='../imagens/logo4.svg'></a>&nbsp;
  
-             <form action='' class='formCabecalho'>
-                 <input type='text' name='pesquisa' id='pesquisa' class='imagensCabecalho'
+             <form action='../PRODUTOS/produto_mostra.php'method='post' class='formCabecalho'>
+                 <input type='text' name='valNome' id='pesquisa' class='imagensCabecalho'
                     size='40' maxlength='30' autofocus placeholder='Buscar' src='lupa.png' autocomplete='off'>&nbsp;
              </form>
  
