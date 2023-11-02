@@ -29,6 +29,10 @@
          <meta name='viewport' content='width=device-width, initial-scale=1.0'>
          <title>Cadastro</title>
          <link rel='stylesheet' type='text/css' href='cadastro.css'>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js'></script>
+         <script src='script.js' defer></script>
+         
      </head>
      <body>
          <div class='page'>
@@ -50,16 +54,16 @@
                  <input type='text' name='telefone' placeholder='Digite seu telefone' required />
 
                  <label for='cpf'>CPF</label>
-                 <input type='text' name='cpf' placeholder='Digite seu CPF' required />
+                 <input type='text' name='cpf' placeholder='Digite seu CPF' id='inputPessoa' required />
                  
                  <label for='cep'>CEP</label>
-                 <input type='text' name='cep' placeholder='Digite seu CEP' required />
+                 <input type='text' name='cep' placeholder='Digite seu CEP' id='CEP'required maxlength=9 />
                  <label for='estado'>Estado</label>
-                 <input type='text' name='estado' placeholder='Estado' required />
+                 <input type='text' name='estado' placeholder='Estado' id='regiao' required disabled />
                  <label for='cidade'>Cidade</label>
-                 <input type='text' name='cidade' placeholder='Cidade' required />
+                 <input type='text' name='cidade' placeholder='Cidade' id='cidade' required disabled />
                  <label for='rua'>Rua</label>
-                 <input type='text' name='rua' placeholder='Rua' required />
+                 <input type='text' name='rua' placeholder='Rua' id='logradouro' required disabled />
 
                  <label for='password'>Senha</label>
                  <input type='password' name='senha' placeholder='Digite sua senha' required />

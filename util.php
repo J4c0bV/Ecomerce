@@ -1,6 +1,76 @@
 <?php 
-  //////  funcao de conexao
-  //////  14-8-2023
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require '../dependencia/vendor/autoload.php';
+
+function EnviaEmail($emailEnviado, $nomeEnviado, $senhaEnviada){
+    $mail = new PHPMailer(true);
+    
+        try {
+            //Server settings
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = 'smtp.gmail.com';                      //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = 'joao.jacob@unesp.br';                     //SMTP username
+            $mail->Password   = 'psyupfvhykhuehlz';                               //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;       //Enable implicit TLS encryption
+            $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    
+            //Recipients
+            $mail->setFrom('joao.jacob@unesp.br', 'Administrção');
+            $mail->addAddress($emailEnviado, $nomeEnviado);     //Add a recipient
+            $mail->addReplyTo('joao.jacob@unesp.br', 'Information');
+            //Content
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = 'Senha de recuperação';
+            $body = "
+            <body>
+                Olá, ".$nomeEnviado.", o email que você
+                desejou que enviassemos o email é:".$emailEnviado.
+                "<br> A senha de recuperação é <br>
+                <strong>".$senhaEnviada."</strong>
+            </body>";
+
+            $mail->Body    = $body ;
+            $mail->send();
+            echo 'Mensagem enviada';
+        } catch (Exception $e) {
+            echo "Deu merda";
+        }
+    }
+
+
+function GeraSenha($tamanho = 8, $maiusculas = true, $numeros = true, $simbolos = false)
+{
+  //$lmin = 'abcdefghijklmnopqrstuvwxyz';
+  $lmai = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $num = '1234567890';
+  $simb = '!@#$%*-';
+  $retorno = '';
+  $caracteres = '';
+
+  //$caracteres .= $lmin;
+  if ($maiusculas) $caracteres .= $lmai;
+  if ($numeros)    $caracteres .= $num;
+  if ($simbolos)   $caracteres .= $simb;
+
+  $len = strlen($caracteres);
+  
+  for ($n = 1; $n <= $tamanho; $n++) {
+      $rand = mt_rand(1, $len);
+      $retorno .= $caracteres[$rand-1];
+  }
+  
+  return $retorno;
+}
+
+
+
+
   function conecta ($params="") 
   {
     
@@ -15,8 +85,6 @@
     } else { return $varConn; }
   }
 
-  //////  funcao de login
-  //////  11-9-2023
   function funcaoLogin ($paramLogin, $paramSenha, &$paramAdmin)  
   {
    $conn = conecta();  
@@ -29,8 +97,6 @@
    return $linha['senha_usuario'] == $paramSenha;  
   }
 
-  //////  funcao de definir cookie
-  //////  11-9-2023
   function DefineCookie($paramNome, $paramValor, $paramMinutos) 
   {
    echo "Cookie: $paramNome Valor: $paramValor";  
@@ -49,12 +115,6 @@
         return FALSE; 
     }  
   }
-
-  /*
-  * Fun  o para executasql frases sql
-  * marcelo c peres - 2023
-  */
-
   // ValorSQL 
   // retorna o valor de um campo de um select
   // Set 2023 - Marcelo C Peres 

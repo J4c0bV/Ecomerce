@@ -38,5 +38,5 @@
   unset($insert);
   unset($conn);
   //tem como mandar por get informações 
-  header('Location: homepage.html');
+  header('Location: ../HOME/homepage.html');
 ?> 

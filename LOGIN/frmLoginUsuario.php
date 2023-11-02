@@ -131,6 +131,7 @@
                         <br>
                         Email:$email</p> <!--td do bd (nome e email)-->
                         <a href='logout.php'><button class='deslogar' type='button'>Deslogar</button></a>
+                        <a href='../ESQUECI/frmEsqueciUsuario.php?login=$login&acao=recupera'><button class='deslogar' type='button'>Esqueceu a senha ?</button></a>
                 </fieldset>
             </div>
             
