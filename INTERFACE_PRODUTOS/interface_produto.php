@@ -45,7 +45,7 @@ $conn = conecta();
 
 $id = $_GET['id']; 
   
-$sql = "SELECT * FROM tbl_produto WHERE id_produto=$id";
+$sql = "SELECT * FROM tbl_produto WHERE id_produto=$id and excluido_produto = 'N' ";
 
 // faz um select basico
 $select = $conn->query($sql)->fetch();
@@ -150,7 +150,7 @@ $select = $conn->query($sql)->fetch();
  ";
 
  
- $sql2 = "SELECT * FROM tbl_produto WHERE id_produto!=$id";
+ $sql2 = "SELECT * FROM tbl_produto WHERE id_produto!=$id and excluido_produto = 'N' ";
 
  $select2 = $conn->query($sql2);
  while($linha = $select2->fetch())

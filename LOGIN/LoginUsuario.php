@@ -18,7 +18,7 @@
         echo $senha;
         $_SESSION['sessaoConectado'] = funcaoLogin($email,$senha,$eh_admin); 
         echo "sessao ".$_SESSION['sessaoConectado'];
-        $_SESSION['sessaoAdmin']     = $eh_admin; 
+        $_SESSION['sessaoAdmin']     = $eh_admin;
 
   }
   unset($insert);

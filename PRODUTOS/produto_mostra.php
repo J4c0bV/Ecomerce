@@ -54,7 +54,7 @@ if (isset($_POST['valNome'])) {
 }
 
 $sql = " select * from tbl_produto 
-         where (nome_produto like '%$valNome%')   
+         where (nome_produto like '%$valNome%') and excluido_produto like 'N'  
          order by nome_produto ";
 // faz um select basico
 $select = $conn->query($sql);

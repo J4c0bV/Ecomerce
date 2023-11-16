@@ -14,17 +14,13 @@
     $sessaoConectado = false; 
   }
 
-    
-    
-  
-
   
   // se sessao nao conectada ...
   if ($sessaoConectado==false) { 
      
-     $loginCookie = '';
+    $loginCookie = '';
 
-     // recupera o valor do cookie com o usuario    
+    // recupera o valor do cookie com o usuario    
 
 
      $stringLogin= "
@@ -51,6 +47,7 @@
                  <label for='senha'>Senha</label>
                  <input type='password' name='senha' placeholder='Digite sua senha' required />
                  <button class='botao' type='submit'>Entrar</button>
+                 <a href='../ESQUECI/frmEsqueciUsuario.php?acao=redefinirLogin' class= 'botao'><p>Esqueci a Senha</p></a>
                  <a href='../CADASTRO/frmCadastroUsuario.php' class='botao'>Cadastre-se</a>
                  <button class='botao' type='reset'>Apagar</button>
              </form>
@@ -120,7 +117,7 @@
             <!-- Fim cabeÃ§alho -->
     
             <div class='seuPerfil'>
-                <p> - Seu perfil - </p>
+                <p> - Seu Perfil - </p>
             </div>
     
             <!--little menu da esquerda-->
@@ -129,7 +126,7 @@
                     <legend>Menu</legend>
                     <p>Nome:$nome
                         <br>
-                        Email:$email</p> <!--td do bd (nome e email)-->
+                        Email:$email</p> 
                         <a href='logout.php'><button class='deslogar' type='button'>Deslogar</button></a>
                         <a href='../ESQUECI/frmEsqueciUsuario.php?login=$login&acao=recupera'><button class='deslogar' type='button'>Esqueceu a senha ?</button></a>
                 </fieldset>

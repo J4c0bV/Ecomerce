@@ -25,7 +25,11 @@
              'admin' => 'n'
             ];
 
-  if ($email<>'') { 
+  if ($email<>'') {
+        DefineCookie('loginCookie', $email, 60); 
+        $_SESSION['sessaoConectado'] = true; 
+        $_SESSION['sessaoAdmin']     = $eh_admin; 
+        
         $CadastroSql = "INSERT INTO tbl_usuario (nome_usuario, cpf_usuario, email_usuario, telefone_usuario, cep_usuario, estado_usuario, cidade_usuario, rua_usuario, senha_usuario, admin_usuario)
             VALUES (:nome, :cpf, :email, :telefone, :cep, :estado, :cidade, :rua, :senha, :admin)";
         $insert = $conn->prepare($CadastroSql); 
@@ -34,5 +38,5 @@
   unset($insert);
   unset($conn);
   //tem como mandar por get informações 
-  header('Location: ../LOGIN/frmLoginUsuario.php');
+  header('Location: ../HOME/homepage.html');
 ?> 

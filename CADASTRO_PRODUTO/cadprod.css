@@ -2,19 +2,11 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    color: #b7cc7a;
-    background-color: #f0f5f9;
+    color:#b7cc7a;
+    background-color: #f0f0f0;
 }
 
-.header {
-    display: none;
-}
-
-.footer {
-    display: none;
-}
-
-.page {
+.pagina {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,19 +18,20 @@ body {
     padding-top: 40px;
 }
 
-.formCadastro {
+.formulario {
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    border-radius: 7px;
+    border-radius: 15px;
     padding: 40px;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
     gap: 5px;
     max-width: 550px;
     width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.formCadastro h1 {
+.formulario h1 {
     padding: 0;
     margin: 0;
     font-weight: 500;
@@ -52,70 +45,72 @@ body {
              color: black;
 }
 
-p {
+.formulario p {
     font-size: 14px;
     color: #666;
     margin-bottom: 25px;
     text-align: center;
 }
+.formCadastro img {
+    align-items: center;
+    margin:10px;
+    width: min-content;
 
-.formCadastro input {
-    padding: 15px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    margin-bottom: 5px;
-    margin-top: px;
-    border-radius: 4px;
-    transition: all linear 160ms;
-    outline: none;
 }
 
-.formCadastro input:focus {
-    border: 1px solid #1a936f;
-}
-
-.formCadastro label {
+.formulario label {
     font-size: 14px;
     font-weight: 500;
-}
-
-
-.formCadastro a:hover {
-    color: #1a936f;
-}
-
-.btn {
-    background: -webkit-gradient(linear, left top, right top, from(#629644 ), 
-            to(#9db160)) no-repeat;
-            background: -moz-linear-gradient(left,#f0f7da , #fcfcfc);
-            filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCCCCC', EndColorStr='#000000');
-
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none !important;
-    transition: all linear 160ms;
-    cursor: pointer;
-    margin-top: 0%;
-    margin-left: 15%;
-    margin-right: 15%;
     
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    background: -webkit-gradient(linear, left top, right top, from(#4f852f), to(#b9d16f )) no-repeat;
-    background: -moz-linear-gradient(left,#b9cc79 , #fcfcfc);
-    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCCCCC', EndColorStr='#000000');
 
+.formulario input,
+.formulario select,
+.formulario textarea {
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    outline: none;
 }
 
-#arrow-btn {
-    display: flex;
-    background-color: transparent;
-    border: none;
-    font-size: 30px;
-    color: #529c3b;
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    border: 1px solid #1a936f;
+}
+
+
+.botao {
+    background: -webkit-gradient(linear, left top, right top, from(#629644 ), 
+            to(#c2d48b)) no-repeat;
+            background: -moz-linear-gradient(left,#f0f7da , #fcfcfc);
+            filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCCCCC', EndColorStr='#000000');
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    font-weight: 600;
+    border: none !important;
     cursor: pointer;
-    float: left;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0 !important;
+    transition: all linear 160ms;
+}
+
+.botao:hover {
+    transform: scale(1.05);
+    background: -webkit-gradient(linear, left top, right top, from(#4f852f), to(#e5fd9c )) no-repeat;
+    background: -moz-linear-gradient(left,#f0f7da , #fcfcfc);
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCCCCC', EndColorStr='#000000');
 }

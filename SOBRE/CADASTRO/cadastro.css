@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -5,13 +7,16 @@ body {
     color: #b7cc7a;
     background-color: #f0f5f9;
 }
-.cabecalho {
+
+.header {
     display: none;
 }
-.rodape {
+
+.footer {
     display: none;
 }
-.pagina {
+
+.page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,25 +24,23 @@ body {
     justify-content: center;
     width: 100%;
     min-height: 100vh;
+    background-color: #f0f5f9;
     padding-top: 40px;
 }
-.formCadastro img {
-    align-items: center;
-    margin:10px;
-    width: min-content;
-}
-.formulario {
+
+.formCadastro {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border-radius: 15px;
+    background-color: #fff;
+    border-radius: 7px;
     padding: 40px;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
     gap: 5px;
     max-width: 550px;
     width: 100%;
 }
-.formulario h1 {
+
+.formCadastro h1 {
     padding: 0;
     margin: 0;
     font-weight: 500;
@@ -45,65 +48,71 @@ body {
     text-align: center;
     margin-bottom: 20px;
     background-image: linear-gradient(to bottom, #4f852f,#9ab83f ,#368020 );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: black;
+            background-clip: text;
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+             color: black;
 }
-.formulario p {
+
+.formCadastro p {
     font-size: 14px;
     color: #666;
     margin-bottom: 25px;
     text-align: center;
 }
 
-.formulario input {
+.formCadastro input {
     padding: 15px;
     font-size: 14px;
     border: 1px solid #ccc;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    border-radius: 10px;
+    margin-bottom: 5px;
+    margin-top: px;
+    border-radius: 4px;
     transition: all linear 160ms;
     outline: none;
 }
-.formulario input:focus {
+
+.formCadastro input:focus {
     border: 1px solid #1a936f;
 }
-.formulario label {
+
+.formCadastro label {
     font-size: 14px;
     font-weight: 500;
 }
-.botao {
-    background: -webkit-gradient(linear, left top, right top, from(#629644 ), to(#c2d48b)) no-repeat;
-    background: -moz-linear-gradient(left,#f0f7da , #fcfcfc);
-    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCCCCC', EndColorStr='#000000');
+
+
+.formCadastro a:hover {
+    color: #1a936f;
+}
+
+#btn {
+    background: -webkit-gradient(linear, left top, right top, from(#629644 ), 
+            to(#9db160)) no-repeat;
+            background: -moz-linear-gradient(left,#f0f7da , #fcfcfc);
+            filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCCCCC', EndColorStr='#000000');
+
     color: #fff;
-    font-size: 15px;
-    height: 40px;
-    width: 40px;
+    font-size: 14px;
     font-weight: 600;
     border: none !important;
     transition: all linear 160ms;
     cursor: pointer;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    border-radius: 10px; 
-    width: 70%; 
-    align-items: center;
+    margin-top: 0%;
     margin-left: 15%;
     margin-right: 15%;
-    text-decoration: none;
-
+    
 }
 
-.botao:hover {
+#btn:hover {
     transform: scale(1.05);
-    background: -webkit-gradient(linear, left top, right top, from(#4f852f), to(#e5fd9c)) no-repeat;
-    background: -moz-linear-gradient(left,#f0f7da, #fcfcfc);
+    background: -webkit-gradient(linear, left top, right top, from(#4f852f), to(#b9d16f )) no-repeat;
+    background: -moz-linear-gradient(left,#b9cc79 , #fcfcfc);
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCCCCC', EndColorStr='#000000');
+
 }
-#seta-btn {
+
+#arrow-btn {
     display: flex;
     background-color: transparent;
     border: none;
@@ -112,5 +121,3 @@ body {
     cursor: pointer;
     float: left;
 }
-
- 
