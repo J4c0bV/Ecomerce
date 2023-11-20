@@ -49,6 +49,7 @@ $qtdProdutos = 0;
 $conn = conecta();
 if (isset($_POST['valNome'])) {
     $valNome = $_POST['valNome'];
+    $valNome = strtoupper($valNome);
 } else {
     $valNome = "";
 }
@@ -71,6 +72,7 @@ while($linha = $select->fetch())
     $varId  = $linha['id_produto'];
     $varPreco = $linha['preco_produto'];
     $varNome = $linha['nome_produto'];
+    $varNome = ucwords((strtolower(($varNome))));
     $varImagem = $linha['codigovisual_produto'];
     
     echo "
