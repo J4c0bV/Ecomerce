@@ -13,16 +13,21 @@
   $senha = $_POST['senha'];
   $eh_admin = false;
 
-  if ($email<>'') {
-        DefineCookie('loginCookie', $email, 60);
-        echo $senha;
-        $_SESSION['sessaoConectado'] = funcaoLogin($email,$senha,$eh_admin); 
-        echo "sessao ".$_SESSION['sessaoConectado'];
-        $_SESSION['sessaoAdmin']     = $eh_admin;
+  $stringUrl = "../HOME/homepage.html";
 
+  if ($email<>'') {
+        
+        if(funcaoLogin($email,$senha,$eh_admin) != false)
+        {
+          DefineCookie('loginCookie', $email, 60);
+          $_SESSION['sessaoConectado'] = funcaoLogin($email,$senha,$eh_admin);
+          $_SESSION['sessaoAdmin']     = $eh_admin;
+        }else{
+          $stringUrl = "frmLoginUsuario.php";
+        }
   }
   unset($insert);
   unset($conn);
   
-  header('Location: ../HOME/homepage.html');
+  header('Location: '.$stringUrl);
 ?> 

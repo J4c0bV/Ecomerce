@@ -89,12 +89,15 @@ function GeraSenha($tamanho = 8, $maiusculas = true, $numeros = true, $simbolos 
   {
    $conn = conecta();  
    $varSQL = " select senha_usuario,admin_usuario from tbl_usuario
-               where email_usuario = '$paramLogin' "; 
-   
+               where email_usuario = '$paramLogin' and senha_usuario = '$paramSenha' ";
    $linha =  $conn->query($varSQL)->fetch();
    var_dump($linha);
-   $paramAdmin = $linha['admin_usuario'] == 's';
-   return $linha['senha_usuario'] == $paramSenha;  
+   if($linha != false){
+        $paramAdmin = $linha['admin_usuario'] == 's';
+        return $linha['senha_usuario'] == $paramSenha;  
+   }else{
+        return false;
+   }
   }
 
   function DefineCookie($paramNome, $paramValor, $paramMinutos) 

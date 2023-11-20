@@ -30,7 +30,7 @@
          <title>Cadastro</title>
          <link rel='stylesheet' type='text/css' href='cadastro.css'>
           <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js'></script>
          <script src='script.js' defer></script>
          
      </head>

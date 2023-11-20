@@ -19,7 +19,6 @@
   if ($sessaoConectado==false) { 
      
     $loginCookie = '';
-
     // recupera o valor do cookie com o usuario    
 
 
@@ -46,6 +45,8 @@
                  <input type='email' name='email' placeholder='Digite seu e-mail' value='$loginCookie'required />
                  <label for='senha'>Senha</label>
                  <input type='password' name='senha' placeholder='Digite sua senha' required />
+
+                 <input type='hidden' name='verificacao' id='verificacao' required />
                  <button class='botao' type='submit'>Entrar</button>
                  <a href='../ESQUECI/frmEsqueciUsuario.php?acao=redefinirLogin' class= 'botao'><p>Esqueci a Senha</p></a>
                  <a href='../CADASTRO/frmCadastroUsuario.php' class='botao'>Cadastre-se</a>
@@ -56,26 +57,28 @@
      </html>
      ";
      
-  }else{
+  }else
+  {
     $login = $_COOKIE['loginCookie'];
     
     $conn = conecta();
   
     $sql = "SELECT * FROM tbl_usuario WHERE email_usuario = '$login'";
 
-   $select = $conn->query($sql);
+    $select = $conn->query($sql);
  
-   while($linha=$select->fetch())
-   {
-   $id  = $linha['id_usuario'];
-   $nome=$linha['nome_usuario'];
-   $endereco=$linha['rua_usuario'];
-   $email =$linha['email_usuario'];
-   $senha=$linha['senha_usuario'];
-   }
+    while($linha=$select->fetch())
+    {
+        $id  = $linha['id_usuario'];
+        $nome=$linha['nome_usuario'];
+        $endereco=$linha['rua_usuario'];
+        $email =$linha['email_usuario'];
+        $senha=$linha['senha_usuario'];
+    }
 
     $stringLogin=
-     "<html lang='pt-br'>
+     "
+    <html lang='pt-br'>
     <head>
         <meta charset='UTF-8'>
         <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate' />
