@@ -7,26 +7,28 @@
    include("../util.php");
  
    $conn = conecta();
-     
-   $preco = doubleval($_POST['preco_produto']);
-   $nome = $_POST['nome_produto']; 
-   $excluido = $_POST['excluido_produto'];
-   $custo = intval($_POST['custo_produto']);
-   $icms = intval($_POST['icms_produto']);
-   $margem = $preco - ($custo+$icms);
-   $descricao = $_POST['descricao_produto'];
-   $qntdDisponivel = intval($_POST['quantidade_disponivel']);
-   $imagem = $_POST ['codigovisual_produto'];
 
-   $linha = [ 'preco_produto'=>$preco,'nome_produto'=> $nome, 'excluido_produto'=> $excluido,
-               'custo_produto'=>$custo, 'margem_lucro_produto' => $margem, 'icms_produto' => $icms, 'cogidovisual_produto' => $imagem, 
-               'descricao_produto'=>$descricao,'quantidade_disponivel'=> $qntdDisponivel];
-   
-   $insert = $conn->prepare("INSERT INTO tbl_produto(preco_produto,nome_produto,excluido_produto,
-   custo_produto, margem_lucro_produto, icms_produto, codigovisual_produto, descricao_produto, quantidade_disponivel) 
-   VALUES(:preco_produto, ':nome_produto', ':excluido_produto', :custo_produto, :margem_lucro_produto, :icms_produto, ':codigovisual_produto', 
-   ':descricao_produto', :quantidade_disponivel)");
+   $linha = [
+      'preco_produto'=>$_POST['preco_produto'], 
+      'nome_produto'=> $_POST['nome_produto'], 
+      'excluido_produto'=>$_POST['excluido_produto'],
+      'custo_produto'=>$_POST['custo_produto'], 
+      'margem_lucro_produto' =>$_POST['preco_produto']-($_POST['custo_produto']+$_POST['icms_produto']),
+      'icms_produto' => $_POST['icms_produto'], 
+      'codigovisual_produto'=> $_POST['codigovisual_produto'],
+      'descricao_produto' => $_POST['descricao_produto'], 
+      'quantidade_disponivel'=> $_POST['quantidade_disponivel']
+      
+  ];
+
+
+   $sql = "INSERT INTO tbl_produto 
+   (preco_produto, nome_produto, excluido_produto,custo_produto,margem_lucro_produto,icms_produto,codigovisual_produto,descricao_produto, quantidade_disponivel) 
+   values (:preco_produto, :nome_produto,  :excluido_produto, :custo_produto, :margem_lucro_produto, :icms_produto, 
+   :codigovisual_produto,:descricao_produto, :quantidade_disponivel )"; 
+
+   $insert = $conn->prepare($sql); 
       
    $insert->execute($linha);
-   header('Location: ../CRUD/crud.php');    
+   header('Location: crud.php');    
 ?>

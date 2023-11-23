@@ -75,8 +75,8 @@
           <td><p class = 'descricao'>$varDescricao</p></td>
           <td><img src='$varImagem'></td>
           <td>$varQntdDisponivel</td>
-          <td><a href='../CADASTRO_PRODUTO/formProduto.php?id=$varId'><img src='../imagens/editar.svg' style= 'width:50px'></a></td>
-          <td><a href='../CRUD/delecao_produto.php?id=$varId'><img src='../imagens/excluir.svg' style= 'width:50px'></a></td>";
+          <td><a href='formProduto.php?id=$varId'><img src='../imagens/editar.svg' style= 'width:50px'></a></td>
+          <td><a href='delecao_produto.php?id=$varId'><img src='../imagens/excluir.svg' style= 'width:50px'></a></td>";
      echo "</tr>";   
         
    } 
@@ -85,7 +85,7 @@
 
    $varId = '';
 
-   echo"<a href='../CADASTRO_PRODUTO/formProduto.php?id=$varId'><img src='../imagens/adicionar.svg' style= 'width:50px'></a>";
+   echo"<a href=formProduto.php?id=$varId'><img src='../imagens/adicionar.svg' style= 'width:50px'></a>";
 
 ?>
 

@@ -34,7 +34,7 @@
    
    // faz um select basico
    $select = $conn->query($sql)->fetch();
-   $IncluiOuAtualiza = "../CRUD/salvar_produto.php";
+   $IncluiOuAtualiza = "salvar_produto.php";
 
    
     $preco = $select['preco_produto'];
@@ -52,8 +52,10 @@
    else
    {
     
-    $IncluiOuAtualiza = "../CRUD/insercao_produto.php";
+    $IncluiOuAtualiza = "insercao_produto.php";
 
+    $id = NULL;
+    $excluido = NULL;
     $preco = "";
     $nome = "";
     $excluido = "N";

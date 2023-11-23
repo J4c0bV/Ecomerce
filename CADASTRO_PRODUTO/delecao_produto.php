@@ -11,5 +11,5 @@ $update->execute($linha);
 
 
 
-header('Location: ../CRUD/crud.php');  
+header('Location: crud.php');  
 ?>
