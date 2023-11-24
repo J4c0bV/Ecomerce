@@ -8,6 +8,6 @@
   $_SESSION['sessaoConectado']=false; 
   $_SESSION['sessaoAdmin']=false; 
 
-  DefineCookie('loginCookie', $email, 0);
-  header('Location: ../HOME/homepage.html');
+  setcookie('loginCookie', $paramValor, 0);
+  header('Location: HOME/homepage.html');
 ?>

@@ -3,7 +3,7 @@
   ini_set ( 'display_errors' , 1); 
   error_reporting (E_ALL);  
   
-  include("../util.php");
+  include("util.php");
   $conn = conecta();
   // inicia a sessao
   session_start();   
@@ -32,5 +32,5 @@
   unset($insert);
   unset($conn);
   
-  header('Location: /HOME/homepage.html');
+  header('Location: HOME/homepage.html');
 ?> 

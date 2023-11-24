@@ -4,11 +4,13 @@
     /*error_reporting(E_ALL);
     ini_set("display_errors", 1);*/
 
+    // incluir util.php
+    include ("../util.php");
+
     // iniciar sessao
     session_start();
 
-    // incluir util.php
-    include ("../util.php");
+
 
     // captura session_id (garante o acesso concorrente)
     $session_id = session_id();  
@@ -27,25 +29,18 @@
     </head>
     <body>
     ";
-    $login = $_COOKIE['loginCookie'];
-    var_dump($login);
-    if($login <>""){
+    // se estiver logado pega o codigo do usuario atraves do $login 
+    if ( isset($_COOKIE['loginCookie']) ) {
         $login = $_COOKIE['loginCookie'];
         $codigoUsuario = ValorSQL($conn, " select id_usuario from tbl_usuario 
                                         where email_usuario = '$login'");
-    }
-    // se estiver logado pega o codigo do usuario atraves do $login 
-    // if ( isset($_COOKIE['loginCookie']) ) {
-    //     $login = $_COOKIE['loginCookie'];
-    //     $codigoUsuario = ValorSQL($conn, " select id_usuario from tbl_usuario 
-    //                                     where email_usuario = '$login'");
-    // } 
-    /*else { 
+    } 
+    else { 
         echo '<script>';
         echo 'alert("Não é possível fazer compras sem estar logado!");';
         echo '</script>';
         header('Location: ../HOME/homepage.html');
-    }*/
+    }
         
     // existe alguma compra associada ao session_id ??
     $existe = intval ( ValorSQL($conn," select count(*) from tbl_compra inner join tbl_compra_temporaria
