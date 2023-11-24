@@ -102,12 +102,6 @@
     background-color:  #449d29;
 }
 
-.containerSeguranca
-{
-    display: flex;
-    align-items: column;
-}
-
 .visualizarSenha
 {
     width: 25px;

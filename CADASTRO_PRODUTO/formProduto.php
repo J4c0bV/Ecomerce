@@ -72,7 +72,7 @@
 
    <form method='POST' action='$IncluiOuAtualiza' class='formulario' enctype='multipart/form-data'>
 
-        <a href='testeHomePage.html' id='arrow-btn'>
+        <a href='crud.php' id='arrow-btn'>
             <img src='../imagens/seta.svg' alt='Seta'>
         </a>
 

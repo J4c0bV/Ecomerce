@@ -34,7 +34,7 @@ if($acao == 'recupera')
 
     <form action='../ESQUECI/esqueci.php' method='POST'>
 
-        <h1>RECUPERAÇÃO DE SENHA</h1>
+        <h1>ALTERAÇÃO DE SENHA</h1>
         <p>
             Este email: $login é um que você tem acesso?
             <br>

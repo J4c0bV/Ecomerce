@@ -110,7 +110,7 @@
 
 #pesquisa
 {
-    background-image: url(lupa.png);
+    background-image: url(../imagens/lupa.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 18px;
@@ -249,6 +249,7 @@ hr
 
 .rodape
 {
+    /*margin-top: 48vh;*/
     display:flex;
     align-items: center;
     justify-content: center;
@@ -313,6 +314,7 @@ hr
 /*Container -----------------------------------------------------------------------*/
 .container
 {
+    min-height: 71vh;
     background-color: #f0f7da ;
     display: flex;
     flex-direction: column;

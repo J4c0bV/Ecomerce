@@ -128,7 +128,7 @@ p
 
 #pesquisa
 {
-    background-image: url(lupa.png);
+    background-image: url(../imagens/lupa.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 18px;
@@ -151,8 +151,11 @@ p
     flex-direction: column;
 
     margin-top: 150px;
+}
 
-    min-height: 40vh;
+.mensagem
+{
+    margin-bottom: 37vh;
 }
 
 .produto
@@ -314,20 +317,15 @@ a
     background-color:  #fff758;
 }
 
-
-
 /*Fim corpo -----------------------------------------------------------------------*/
 
 /*Início Style Rodapé -----------------------------------------------------------------------*/
 
-
 .rodape
 {
-    margin-top: 45vh;
     display:flex;
     align-items: center;
     justify-content: center;
-
     height: 10vh;
 }
 
@@ -378,7 +376,6 @@ a
 }
 
 /*Fim Style Rodapé -----------------------------------------------------------------------*/
-
 
 /*Container -----------------------------------------------------------------------*/
 .container

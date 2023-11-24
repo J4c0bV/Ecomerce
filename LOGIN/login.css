@@ -112,5 +112,7 @@ body {
     cursor: pointer;
     float: left;
 }
+#senhaAsterisco{
 
- 
+    content: "************";
+}

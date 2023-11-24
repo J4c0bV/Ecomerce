@@ -263,8 +263,8 @@
                <div class='seguranca' name='seguranca'>
                    <fieldset>
                        <legend>Segurança</legend>
-                       <p>Minha senha: &nbsp&nbsp&nbsp&nbsp</p>
-                       <p id='senhaAsterisco'>$senha</p> 
+                       <p>Minha senha:</p>
+                       <p id='senhaAsterisco'>$senha</p>
                        <a href='../ESQUECI/frmEsqueciUsuario.php?login=$login&acao=recupera'><button class='botaoLogado' type='button'>Alterar a senha</button></a>
                    </fieldset>
                </div>

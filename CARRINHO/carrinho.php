@@ -27,12 +27,25 @@
     </head>
     <body>
     ";
-    // se estiver logado pega o codigo do usuario atraves do $login 
-    if ( isset($_COOKIE['loginCookie']) ) {
+    $login = $_COOKIE['loginCookie'];
+    var_dump($login);
+    if($login <>""){
         $login = $_COOKIE['loginCookie'];
         $codigoUsuario = ValorSQL($conn, " select id_usuario from tbl_usuario 
                                         where email_usuario = '$login'");
     }
+    // se estiver logado pega o codigo do usuario atraves do $login 
+    // if ( isset($_COOKIE['loginCookie']) ) {
+    //     $login = $_COOKIE['loginCookie'];
+    //     $codigoUsuario = ValorSQL($conn, " select id_usuario from tbl_usuario 
+    //                                     where email_usuario = '$login'");
+    // } 
+    /*else { 
+        echo '<script>';
+        echo 'alert("Não é possível fazer compras sem estar logado!");';
+        echo '</script>';
+        header('Location: ../HOME/homepage.html');
+    }*/
         
     // existe alguma compra associada ao session_id ??
     $existe = intval ( ValorSQL($conn," select count(*) from tbl_compra inner join tbl_compra_temporaria
@@ -289,8 +302,6 @@
     where tbl_compra_produto.fk_compra = $codigoCompra AND tbl_compra.status_pedido = 'Pendente'"); 
     
     if($total <>""){
-    
-        
 
         //echo "Status da compra: $statusCompra<br>";
         //echo "Total: $total <br><br>";
@@ -300,7 +311,7 @@
         <button class = 'btnComprar' onclick = 'btnComprar()'><a href='carrinho.php?operacao=fechar&produtoFechado=$produtos_serializados&idProduto=$codigoProduto'>Comprar</a></button>
         </div>";
     }else{
-       $stringCarrinhoEstrutura.="<p>Adicione produtos para poder comprar!</p>";
+       $stringCarrinhoEstrutura.="<p class='mensagem'>Adicione produtos para poder comprar!</p>";
     }
     
     $stringCarrinhoEstrutura .= "

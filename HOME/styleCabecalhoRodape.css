@@ -104,7 +104,7 @@
 
 #pesquisa
 {
-    background-image: url(lupa.png);
+    background-image: url(../imagens/lupa.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 18px;
@@ -117,9 +117,20 @@
     border: 1px solid #ffffff;
     outline: none; 
 }
+
 /*Fim Style Cabeçalho ----------------------------------------------------------------*/
 
 /*Início Style Rodapé*/
+.btnLupa {
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+
+    display: block;
+
+    align-items: center;
+    justify-content: center;
+}
 
 .rodape
 {

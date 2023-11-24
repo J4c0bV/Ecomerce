@@ -24,6 +24,9 @@
           $_SESSION['sessaoAdmin']     = $eh_admin;
         }else{
           $stringUrl = "frmLoginUsuario.php";
+          echo '<script>';
+          echo 'alert("Email ou senha inválidos! Redigite!");';
+          echo '</script>';
         }
   }
   unset($insert);
