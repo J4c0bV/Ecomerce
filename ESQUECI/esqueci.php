@@ -25,7 +25,7 @@ $acao = $_POST["acao"];
 
     ExecutaSQL($conn, "update tbl_usuario SET senha_usuario = '$senhaNova' where senha_usuario = '$senhaRecupera'");
 
-    header('Location: ../LOGIN/frmLoginUsuario.php');
+    header('Location: ../frmLoginUsuario.php');
 
   } else if($acao == 'redefinirLogin'){
     if(isset($_POST['emailEnviado'])){

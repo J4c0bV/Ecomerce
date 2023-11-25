@@ -152,13 +152,11 @@ if(isset($_POST['dInicial']) &&
         <?php
     }else if($acao = 'baixar'){
     $url = "frmRelatorio.php";
-    echo "OIOIOI";
-    //var_dump($html);
     if ( CriaPDF ( 'Relatorio de Vendas', $html, 'relatorios/relatorio.pdf' ) )  
     {
         echo 'Gerado com sucesso';
     }
-    //header(("Location: $url"));
+    header(("Location: $url"));
     }
 }
 ?>

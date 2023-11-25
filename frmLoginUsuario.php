@@ -35,8 +35,8 @@
      <body>
          <div class='pagina'>
              <form method='POST' action='LoginUsuario.php' class='formulario'>
-                 <a href='../HOME/homepage.html' id='seta-btn'>
-                     <img src='../imagens/seta.svg' alt='Seta'>
+                 <a href='HOME/homepage.html' id='seta-btn'>
+                     <img src='imagens/seta.svg' alt='Seta'>
                  </a>
                  <h1>LOGIN</h1>
                  <p>Preencha os campos abaixo para fazer login na sua conta.</p>
@@ -47,8 +47,8 @@
 
                  <input type='hidden' name='verificacao' id='verificacao' required />
                  <button class='botao' type='submit'>Entrar</button>
-                 <a href='../ESQUECI/frmEsqueciUsuario.php?acao=redefinirLogin' class= 'botao'>Esqueci a Senha</a>
-                 <a href='../CADASTRO/frmCadastroUsuario.php' class='botao'>Cadastre-se</a>
+                 <a href='ESQUECI/frmEsqueciUsuario.php?acao=redefinirLogin' class= 'botao'>Esqueci a Senha</a>
+                 <a href='CADASTRO/frmCadastroUsuario.php' class='botao'>Cadastre-se</a>
                  <button class='botao' type='reset'>Apagar</button>
              </form>
          </div>
@@ -96,7 +96,7 @@
            <meta http-equiv='Expires' content='0' />
            <title>Página do usuário</title>
            <link rel='stylesheet' type='text/css' href='stylePaginaUsuario.css'>
-           <link rel='stylesheet' type='text/css' href='../HOME/styleCabecalhoRodape.css'>
+           <link rel='stylesheet' type='text/css' href='HOME/styleCabecalhoRodape.css'>
        </head>
        <body>
            <div class='container'>
@@ -107,23 +107,23 @@
    
                <div class='cabecalhoPesquisa'>
     
-                <a class='logoCabecalho' href='../HOME/homepage.html'><img width='200' src='../imagens/logo4.svg'></a>&nbsp;
+                <a class='logoCabecalho' href='HOME/homepage.html'><img width='200' src='imagens/logo4.svg'></a>&nbsp;
     
                 <form action='../PRODUTOS/produto_mostra.php'method='post' class='formCabecalho'>
                     <input type='text' name='valNome' id='pesquisa' class='imagensCabecalho'
                        size='40' maxlength='30' autofocus placeholder='Buscar' src='lupa.png' autocomplete='off'>&nbsp;
                 </form>
     
-                <a class='imagensCabecalho' href='../CARRINHO/carrinho.php'><img width='30' src='../imagens/carrinho.png'></a>&nbsp;
+                <a class='imagensCabecalho' href='CARRINHO/carrinho.php'><img width='30' src='imagens/carrinho.png'></a>&nbsp;
     
-                <a class='imagensCabecalho' href='frmLoginUsuario.php'><img width='35' src='../imagens/user.png'></a>         
+                <a class='imagensCabecalho' href='frmLoginUsuario.php'><img width='35' src='imagens/user.png'></a>         
             </div>
             
             <!--cabeçalho sobre, produtos, devs-->
             <div class='cabecalho'>
-                <a class='linksCabecalho' href='../SOBRE/sobre.html'><span class='animacaoHover'>&nbsp;Sobre</span></a>&nbsp;
-                <a class='linksCabecalho' href='../PRODUTOS/produto_mostra.php'><span class='animacaoHover'>&nbsp;Produtos</span></a>&nbsp;
-                <a class='linksCabecalho' href='../DEVS/paginaDesenvolvedores.html'><span class='animacaoHover'>&nbsp;Desenvolvedores</span></a>&nbsp;
+                <a class='linksCabecalho' href='SOBRE/sobre.html'><span class='animacaoHover'>&nbsp;Sobre</span></a>&nbsp;
+                <a class='linksCabecalho' href='PRODUTOS/produto_mostra.php'><span class='animacaoHover'>&nbsp;Produtos</span></a>&nbsp;
+                <a class='linksCabecalho' href='DEVS/paginaDesenvolvedores.html'><span class='animacaoHover'>&nbsp;Desenvolvedores</span></a>&nbsp;
             </div>
     
             </div>
@@ -145,10 +145,10 @@
                            <a href='logout.php'><button class='botaoLogado' type='button'>Logout</button></a>
                            <br>
                            <br>
-                           <a href='../CADASTRO_PRODUTO/crud.php'><button class='botaoLogado' type='button'>Acessar o CRUD Produtos</button></a>
+                           <a href='CADASTRO_PRODUTO/crud.php'><button class='botaoLogado' type='button'>Acessar o CRUD Produtos</button></a>
                            <br>
                            <br>
-                           <a href='../RELATORIO/frmRelatorio.php'><button class='botaoLogado' type='button'>Visualizar o relatório</button></a>
+                           <a href='RELATORIO/frmRelatorio.php'><button class='botaoLogado' type='button'>Visualizar o relatório</button></a>
                    </fieldset>
                </div>
                
@@ -158,7 +158,7 @@
                        <legend>Segurança</legend>
                        <p>Minha senha: &nbsp&nbsp&nbsp&nbsp</p>
                        <p id='senhaAsterisco'>$senha</p> 
-                       <a href='../ESQUECI/frmEsqueciUsuario.php?login=$login&acao=recupera'><button class='botaoLogado' type='button'>Alterar a senha</button></a>
+                       <a href='ESQUECI/frmEsqueciUsuario.php?login=$login&acao=recupera'><button class='botaoLogado' type='button'>Alterar a senha</button></a>
                    </fieldset>
                </div>
        
@@ -178,9 +178,9 @@
                <!--InÃ­cio RodapÃ©-->
                <!--rodapÃ©-->
                <div class='rodape'>
-               <a class='linksRodape' href='../HOME/homepage.html'>&nbsp;Home</a>
-               <a class='linksRodape' href='../SOBRE/sobre.html'>&nbsp;Sobre</a> &nbsp;
-               <a class='linksRodape' href='../PRODUTOS/produto_mostra.php'>&nbsp;Produtos</a> &nbsp;
+               <a class='linksRodape' href='HOME/homepage.html'>&nbsp;Home</a>
+               <a class='linksRodape' href='SOBRE/sobre.html'>&nbsp;Sobre</a> &nbsp;
+               <a class='linksRodape' href='PRODUTOS/produto_mostra.php'>&nbsp;Produtos</a> &nbsp;
                <a class='linksRodape' href='frmLoginUsuario.php'>&nbsp;Perfil</a> &nbsp;
            </div>
        
@@ -210,7 +210,7 @@
            <meta http-equiv='Expires' content='0' />
            <title>Página do usuário</title>
            <link rel='stylesheet' type='text/css' href='stylePaginaUsuario.css'>
-           <link rel='stylesheet' type='text/css' href='../HOME/styleCabecalhoRodape.css'>
+           <link rel='stylesheet' type='text/css' href='HOME/styleCabecalhoRodape.css'>
        </head>
        <body>
            <div class='container'>
@@ -221,23 +221,23 @@
    
                <div class='cabecalhoPesquisa'>
     
-                <a class='logoCabecalho' href='../HOME/homepage.html'><img width='200' src='../imagens/logo4.svg'></a>&nbsp;
+                <a class='logoCabecalho' href='HOME/homepage.html'><img width='200' src='imagens/logo4.svg'></a>&nbsp;
     
-                <form action='../PRODUTOS/produto_mostra.php'method='post' class='formCabecalho'>
+                <form action='PRODUTOS/produto_mostra.php'method='post' class='formCabecalho'>
                     <input type='text' name='valNome' id='pesquisa' class='imagensCabecalho'
                        size='40' maxlength='30' autofocus placeholder='Buscar' src='lupa.png' autocomplete='off'>&nbsp;
                 </form>
     
-                <a class='imagensCabecalho' href='../CARRINHO/carrinho.php'><img width='30' src='../imagens/carrinho.png'></a>&nbsp;
+                <a class='imagensCabecalho' href='CARRINHO/carrinho.php'><img width='30' src='imagens/carrinho.png'></a>&nbsp;
     
-                <a class='imagensCabecalho' href='frmLoginUsuario.php'><img width='35' src='../imagens/user.png'></a>         
+                <a class='imagensCabecalho' href='frmLoginUsuario.php'><img width='35' src='imagens/user.png'></a>         
             </div>
             
             <!--cabeçalho sobre, produtos, devs-->
             <div class='cabecalho'>
-                <a class='linksCabecalho' href='sobre.html'><span class='animacaoHover'>&nbsp;Sobre</span></a>&nbsp;
-                <a class='linksCabecalho' href='produto_mostra.php'><span class='animacaoHover'>&nbsp;Produtos</span></a>&nbsp;
-                <a class='linksCabecalho' href='paginaDesenvolvedores.html'><span class='animacaoHover'>&nbsp;Desenvolvedores</span></a>&nbsp;
+                <a class='linksCabecalho' href='SOBRE/sobre.html'><span class='animacaoHover'>&nbsp;Sobre</span></a>&nbsp;
+                <a class='linksCabecalho' href='PRODUTOS/produto_mostra.php'><span class='animacaoHover'>&nbsp;Produtos</span></a>&nbsp;
+                <a class='linksCabecalho' href='DEVS/paginaDesenvolvedores.html'><span class='animacaoHover'>&nbsp;Desenvolvedores</span></a>&nbsp;
             </div>
     
             </div>
@@ -265,7 +265,7 @@
                        <legend>Segurança</legend>
                        <p>Minha senha: &nbsp&nbsp&nbsp&nbsp</p>
                        <p id='senhaAsterisco'>$senha</p> 
-                       <a href='../ESQUECI/frmEsqueciUsuario.php?login=$login&acao=recupera'><button class='botaoLogado' type='button'>Alterar a senha</button></a>
+                       <a href='ESQUECI/frmEsqueciUsuario.php?login=$login&acao=recupera'><button class='botaoLogado' type='button'>Alterar a senha</button></a>
                    </fieldset>
                </div>
        
@@ -285,9 +285,9 @@
                <!--InÃ­cio RodapÃ©-->
                <!--rodapÃ©-->
                <div class='rodape'>
-               <a class='linksRodape' href='homepage.html'>&nbsp;Home</a>
-               <a class='linksRodape' href='sobre.html'>&nbsp;Sobre</a> &nbsp;
-               <a class='linksRodape' href='produto_mostra.php'>&nbsp;Produtos</a> &nbsp;
+               <a class='linksRodape' href='HOME/homepage.html'>&nbsp;Home</a>
+               <a class='linksRodape' href='SOBRE/sobre.html'>&nbsp;Sobre</a> &nbsp;
+               <a class='linksRodape' href='PRODUTOS/produto_mostra.php'>&nbsp;Produtos</a> &nbsp;
                <a class='linksRodape' href='frmLoginUsuario.php'>&nbsp;Perfil</a> &nbsp;
            </div>
        

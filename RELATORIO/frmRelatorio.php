@@ -10,7 +10,7 @@
     <div class='page'>
         <form action='relatorio.php' method='POST' class='formRelatorio'>
 
-            <a href='../LOGIN/frmLoginUsuario.php' id='arrow-btn'>
+            <a href='../frmLoginUsuario.php' id='arrow-btn'>
                 <img src='../imagens/seta.svg' alt='Seta'>
             </a>
 

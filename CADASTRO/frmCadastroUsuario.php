@@ -37,7 +37,7 @@
      <body>
          <div class='page'>
              <form method='POST' action='CadastroUsuario.php' class='formCadastro'>
-                 <a href='../LOGIN/frmLoginUsuario.php' id='arrow-btn'>
+                 <a href='../frmLoginUsuario.php' id='arrow-btn'>
                      <img src='../imagens/seta.svg' alt='Seta'>
                  </a>
      

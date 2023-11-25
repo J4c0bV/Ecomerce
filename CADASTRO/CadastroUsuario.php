@@ -34,5 +34,5 @@
   unset($insert);
   unset($conn);
   //tem como mandar por get informações 
-  header('Location: ../LOGIN/frmLoginUsuario.php');
+  header('Location: ../frmLoginUsuario.php');
 ?> 
